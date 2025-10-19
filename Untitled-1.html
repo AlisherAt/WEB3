@@ -1,193 +1,275 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Webpage</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header-flex">
-        <div class="logo">MyLogo</div>
-        <nav>
-            <div class="nav-flex">
-                <a href="#">Home</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
-            </div>
-        </nav>
-        <div class="header-text">
-            <p>Welcome to my personal website! You can change this header text to anything you like.</p>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Personal Site </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body{background:#f8f9fa}
+      .example-card{background:#fff;border:1px solid #e5e7eb;border-radius:.5rem;padding:1.25rem;margin-bottom:1.25rem}
+      .personal-section{margin-top:2rem}
+      .featured-image{max-width:320px;border-radius:8px}
+      .project-card .card-img-top{height:160px;object-fit:cover;border-top-left-radius:.75rem;border-top-right-radius:.75rem}
+      .project-card .card{border-radius:.75rem}
+      .project-card .card-body .card-title{font-weight:700}
+      .project-card .card-body .card-sub{letter-spacing:.02em;text-transform:uppercase;font-size:.85rem;color:#6c757d}
+      .project-card .btn-view{background:#294d64;color:#fff;border-radius:.35rem;padding:.35rem .9rem}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">MyLogo</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#assignment">Assignment</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          </ul>
         </div>
-    </header>
-
-    <div id="topbanner">
-        <h1 class="section-heading">Alisher Akhmett</h1>
-        <h2 class="section-heading">Web Technologies Frontend</h2>
-    </div>
-
-    <nav id="navbar">
-        <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
+      </div>
     </nav>
 
-    <div class="layout-section">
-        <h3 class="section-heading">About Me</h3>
-        <p class="paragraph-text">Hello! I'm Alisher, a web development enthusiast who loves learning new technologies and building cool projects.</p>
-    </div>
-
-    <div class="layout-section contentbox">
-        <h3 class="section-heading">My Hobbies</h3>
-        <ol>
-            <li>Tennis</li>
-            <li>Football</li>
-            <li>Reading novels</li>
-        </ol>
-    </div>
-
-    <div class="layout-section contentbox">
-        <h3 class="section-heading">Favorite Websites</h3>
-        <ul>
-            <li><a href="https://wikipedia.org" target="_blank">Wikipedia</a></li>
-            <li><a href="https://ranobelib.me" target="_blank">Ranobelib</a></li>
-            <li><a href="https://github.com" target="_blank">GitHub</a></li>
-        </ul>                                                                                                 
-    </div>
-
-    <div class="layout-section">
-        <h3 class="section-heading">My Favorite Image</h3>
-        <img src="images.jpeg" alt="Mem" class="featured-image">
-    </div>
-
-    <form id="user-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="form-input"><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" class="form-input"><br><br>
-        
-        <label for="color">Favorite Color:</label>
-        <input type="color" id="color" name="color" class="form-input"><br><br>
-        
-        <input type="submit" value="Submit" class="submit-btn btn-hover-effect">
-    </form>
-
-    <div class="card-row">
-        <div class="card">
-            <img src="img1.png" alt="Project 1">
-            <div class="card-title">Project Juventus</div>
-            <div class="card-text">GREATEST EVER UCL GOAL</div>
-            <button class="card-btn">View</button>
-        </div>
-        <div class="card">
-            <img src="img2.png" alt="Project 2">
-            <div class="card-title">Project Perfection</div>
-            <div class="card-text">BEST GOAL FROM BEST PLAYER</div>
-            <button class="card-btn">View</button>
-        </div>
-        <div class="card">
-            <img src="img3.png" alt="Project 3">
-            <div class="card-title">Project Simeone</div>
-            <div class="card-text">Revenge on Simeone 3-0(SUIIIII)</div>
-            <button class="card-btn">View</button>
-        </div>
-    </div>
-
-    <div class="grid-layout">
-        <div class="grid-header">
-            <h2>Some layout</h2>
-            <p>I do not know what to actually write here cause i am out of ideas</p>
-        </div>
-        <aside class="grid-sidebar">
-            <h3>Sidebar</h3>
-            <p>ome sidebar</p>
-        </aside>
-        <main class="grid-main">
-            <h3>Main Content</h3>
-            <p>Here should be main content</p>
-        </main>
-        <footer class="grid-footer">
-            <p>Some footer</p>
-        </footer>
-    </div>
-
-    <div class="portfolio-grid">
-        <header class="portfolio-header header-flex">
-            <div class="logo">Portfolio</div>
-            <nav>
-                <div class="nav-flex">
-                    <a href="#">Home</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Contact</a>
-                </div>
-            </nav>
-            <div class="header-text">
-                <p>Some portfolio header</p>
-            </div>
+    <main class="container">
+      <section id="assignment" class="mb-4">
+        <header class="mb-3">
+          <h1 class="h3">Assignment #5 — Forms and Validation</h1>
+          
         </header>
-        <section class="portfolio-projects">
-            <div class="project-card">
-                <div class="project-card-title">Project A</div>
-                <div class="project-card-desc">Description A</div>
-                <button class="project-card-btn">Details</button>
+
+        <section class="example-card" aria-labelledby="part1">
+          <h2 id="part1" class="h5"> Basic HTML Forms</h2>
+          <p class="small text-muted"></p>
+          <form id="contact-basic" class="mb-3">
+            <div class="mb-2">
+              <label for="basic-name">Name</label>
+              <input id="basic-name" name="name" type="text" class="form-control" placeholder="Your name">
             </div>
-            
+            <div class="mb-2">
+              <label for="basic-email">Email</label>
+              <input id="basic-email" name="email" type="email" class="form-control" placeholder="you@example.com">
+            </div>
+            <div class="mb-2">
+              <label for="basic-message">Message</label>
+              <textarea id="basic-message" name="message" rows="4" class="form-control" placeholder="Write your message"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send</button>
+          </form>
+
+          <hr>
+
+          <p class="small text-muted">Form with HTML5 </p>
+          <form id="contact-validated" novalidate>
+            <div class="mb-2">
+              <label for="v-name" class="form-label">Name <span class="text-danger">*</span></label>
+              <input id="v-name" name="name" type="text" class="form-control" required maxlength="40">
+              <div class="invalid-feedback">Please enter your name .</div>
+            </div>
+            <div class="mb-2">
+              <label for="v-email" class="form-label">Email <span class="text-danger">*</span></label>
+              <input id="v-email" name="email" type="email" class="form-control" required>
+              <div class="invalid-feedback">Please enter an email address.</div>
+            </div>
+            <div class="mb-2">
+              <label for="v-message" class="form-label">Message</label>
+              <textarea id="v-message" name="message" rows="4" class="form-control" maxlength="400"></textarea>
+              <div class="form-text">Max 400 characters</div>
+            </div>
+            <button class="btn btn-success" type="submit">Submit</button>
+          </form>
         </section>
-        <aside class="portfolio-sidebar">
-            
-            <h3>Portfolio Sidebar</h3>
-            <p>My portfolio</p>
-        </aside>
-        <footer class="portfolio-footer">
-            
-            <p>REAL GOAT 🐐🐐🐐</p>
-        </footer>
-    </div>
 
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="img1.png" alt="Gallery 1">
-            <div class="gallery-caption">Caption 1</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img2.png" alt="Gallery 2">
-            <div class="gallery-caption">Caption 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img3.png" alt="Gallery 3">
-            <div class="gallery-caption">Caption 3</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img4.png" alt="Gallery 4">
-            <div class="gallery-caption">Caption 4</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img5.png" alt="Gallery 5">
-            <div class="gallery-caption">Caption 5</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img6.png" alt="Gallery 6">
-            <div class="gallery-caption">Caption 6</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img7.png" alt="Gallery 7">
-            <div class="gallery-caption">Caption 7</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img8.png" alt="Gallery 8">
-            <div class="gallery-caption">Caption 8</div>
-        </div>
-        <div class="gallery-item">
-            <img src="img9.png" alt="Gallery 9">
-            <div class="gallery-caption">Caption 9</div>
-        </div>
-    </div>
+        <section class="example-card" aria-labelledby="part2">
+          <h2 id="part2" class="h5">Bootstrap Forms</h2>
+          <form id="contact-bootstrap" class="needs-validation row g-3" novalidate>
+            <div class="col-md-6">
+              <label for="bs-name" class="form-label">Name</label>
+              <input id="bs-name" type="text" class="form-control" required>
+              <div class="invalid-feedback">Name is required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="bs-email" class="form-label">Email</label>
+              <input id="bs-email" type="email" class="form-control" required>
+              <div class="invalid-feedback">Email is required.</div>
+            </div>
+            <div class="col-12">
+              <label for="bs-message" class="form-label">Message</label>
+              <textarea id="bs-message" class="form-control" rows="3" required></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+          </form>
+        </section>
 
-    <div id="footer-container">
-        <p>Main Footer</p>
-    </div>
-</body>
+        <section class="example-card" aria-labelledby="part3">
+          <h2 id="part3" class="h5">Registration Form</h2>
+          <form id="registration-form" class="needs-validation row g-3" novalidate>
+            <div class="col-md-6">
+              <label for="firstName" class="form-label">First name</label>
+              <input id="firstName" name="firstName" class="form-control" required>
+              <div class="invalid-feedback">First name required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Last name</label>
+              <input id="lastName" name="lastName" class="form-control" required>
+              <div class="invalid-feedback">Last name required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-email" class="form-label">Email</label>
+              <input id="reg-email" name="email" type="email" class="form-control" required>
+              <div class="invalid-feedback">Valid email required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="country" class="form-label">Country</label>
+              <select id="country" name="country" class="form-select" required>
+                <option value="">Choose...</option>
+                <option>Kazakhstan</option>
+                <option>Uzbekistan</option>
+                <option>Russia</option>
+                <option>Other</option>
+              </select>
+              <div class="invalid-feedback">Please select a country.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="password" class="form-label">Password</label>
+              <input id="password" name="password" type="password" class="form-control" minlength="6" required>
+              <div class="invalid-feedback">Password must be at least 6 characters.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" minlength="6" required>
+              <div class="invalid-feedback" id="pwd-feedback">Passwords must match.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Gender</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="genderM" value="male" required>
+                  <label class="form-check-label" for="genderM">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="genderF" value="female">
+                  <label class="form-check-label" for="genderF">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="genderO" value="other">
+                  <label class="form-check-label" for="genderO">Other</label>
+                </div>
+                <div class="invalid-feedback d-block" id="genderFeedback">Please choose a gender.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Hobbies</label>
+              <div class="d-flex gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="h1" name="hobbies" value="sports">
+                  <label class="form-check-label" for="h1">Sports</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="h2" name="hobbies" value="reading">
+                  <label class="form-check-label" for="h2">Reading</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="h3" name="hobbies" value="music">
+                  <label class="form-check-label" for="h3">Music</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 d-flex gap-2">
+              <button class="btn btn-primary" type="submit">Register</button>
+              <button class="btn btn-outline-secondary" type="reset">Reset</button>
+            </div>
+          </form>
+          <div id="regResult" class="mt-3" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section id="about" class="personal-section">
+        <h2>About Me</h2>
+        <p>Hello! I'm Alisher, a web development enthusiast who loves learning new technologies and building cool projects.</p>
+      </section>
+
+      <section id="projects" class="personal-section project-card">
+        <h2 class="mb-3">Projects</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="img4.png" class="card-img-top" alt="Project Juventus">
+              <div class="card-body text-center">
+                <h5 class="card-title">Project Juventus</h5>
+                <p class="card-sub">GREATEST EVER UCL GOAL</p>
+                <a href="#" class="btn btn-view mt-2">View</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="img5.png" class="card-img-top" alt="Project Perfection">
+              <div class="card-body text-center">
+                <h5 class="card-title">Project Perfection</h5>
+                <p class="card-sub">BEST GOAL FROM BEST PLAYER</p>
+                <a href="#" class="btn btn-view mt-2">View</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="img6.png" class="card-img-top" alt="Project Simeone">
+              <div class="card-body text-center">
+                <h5 class="card-title">Project Simeone</h5>
+                <p class="card-sub">Revenge on Simeone 3-0(SUIIIII)</p>
+                <a href="#" class="btn btn-view mt-2">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="personal-section">
+        <h2>Gallery</h2>
+        <div class="row g-2">
+          <div class="col-6 col-md-4"><img src="img1.png" alt="Gallery 1" class="img-fluid rounded"></div>
+          <div class="col-6 col-md-4"><img src="img2.png" alt="Gallery 2" class="img-fluid rounded"></div>
+          <div class="col-6 col-md-4"><img src="img3.png" alt="Gallery 3" class="img-fluid rounded"></div>
+        </div>
+      </section>
+
+      <footer class="text-center text-muted my-4">© 2025 Alisher SE 2425</footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function attachRealtimeValidation(form){
+        const elements = Array.from(form.querySelectorAll('input,select,textarea'));
+        elements.forEach(el=>{
+          el.addEventListener('input', ()=>{
+            if(el.type==='radio') return;
+            if(el.checkValidity()){el.classList.remove('is-invalid'); el.classList.add('is-valid')} else {el.classList.remove('is-valid'); if(el.value!=='') el.classList.add('is-invalid'); else el.classList.remove('is-invalid')}
+          })
+        })
+      }
+
+      const password = document.getElementById('password'), confirmPassword = document.getElementById('confirmPassword');
+      function validatePasswordMatch(){ if(!password||!confirmPassword) return; if(confirmPassword.value===''){confirmPassword.setCustomValidity(''); return} if(password.value!==confirmPassword.value){confirmPassword.setCustomValidity('Passwords do not match')} else {confirmPassword.setCustomValidity('')} }
+      [password,confirmPassword].forEach(el=>{ if(!el) return; el.addEventListener('input', ()=>{ validatePasswordMatch(); if(el.checkValidity()){el.classList.remove('is-invalid'); el.classList.add('is-valid')} else {el.classList.remove('is-valid'); el.classList.add('is-invalid')} }) })
+
+      document.querySelectorAll('form.needs-validation').forEach(form=>{
+        attachRealtimeValidation(form);
+        form.addEventListener('submit', function(e){
+          const genderGroup = form.querySelectorAll('input[name="gender"]');
+          if(genderGroup && genderGroup.length){ const any = Array.from(genderGroup).some(r=>r.checked); const gf = document.getElementById('genderFeedback'); if(!any){ gf.style.display='block' } else { gf.style.display='none' } }
+          validatePasswordMatch();
+          if(!form.checkValidity()){ e.preventDefault(); e.stopPropagation(); } else { e.preventDefault(); const result=document.getElementById('regResult'); if(result) result.innerHTML='<div class="alert alert-success">Form submitted successfully (demo).</div>' }
+          form.classList.add('was-validated');
+        }, false)
+      })
+
+      document.getElementById('contact-validated').addEventListener('submit', function(e){ if(!this.checkValidity()){ e.preventDefault(); this.reportValidity(); } else { e.preventDefault(); alert('Contact form submitted (demo)') } })
+      document.getElementById('contact-basic').addEventListener('submit', function(e){ e.preventDefault(); alert('Thank you — message recorded (demo).') })
+    </script>
+  </body>
 </html>

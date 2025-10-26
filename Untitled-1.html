@@ -6,22 +6,52 @@
     <title>Personal Site </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      body{background:#f8f9fa}
-      .example-card{background:#fff;border:1px solid #e5e7eb;border-radius:.5rem;padding:1.25rem;margin-bottom:1.25rem}
+      :root{--sidebar-width:320px}
+      body{background:#f1f2f4;color:#222}
+      /* card-like sections */
+      .example-card{background:#fff;border:1px solid #e9ecef;border-radius:.6rem;padding:1.25rem;margin-bottom:1.25rem}
       .personal-section{margin-top:2rem}
       .featured-image{max-width:320px;border-radius:8px}
-      .project-card .card-img-top{height:160px;object-fit:cover;border-top-left-radius:.75rem;border-top-right-radius:.75rem}
-      .project-card .card{border-radius:.75rem}
-      .project-card .card-body .card-title{font-weight:700}
-      .project-card .card-body .card-sub{letter-spacing:.02em;text-transform:uppercase;font-size:.85rem;color:#6c757d}
-      .project-card .btn-view{background:#294d64;color:#fff;border-radius:.35rem;padding:.35rem .9rem}
+
+      /* Projects */
+      .project-card .card-img-top{height:180px;object-fit:cover;border-top-left-radius:.75rem;border-top-right-radius:.75rem}
+      .project-card .card{border-radius:.75rem;border:1px solid rgba(0,0,0,0.04)}
+      .project-card .card-body .card-title{font-weight:700;margin-bottom:.25rem}
+      .project-card .card-body .card-sub{letter-spacing:.02em;text-transform:uppercase;font-size:.79rem;color:#6c757d;margin-bottom:.5rem}
+      .project-card .btn-view{background:#294d64;color:#fff;border-radius:.35rem;padding:.35rem .9rem;border:none}
+      .project-card .card-body{text-align:center;padding-top:1rem;padding-bottom:1rem}
+
+      /* Layout grid: main content + sidebar */
+      .site-grid{display:grid;grid-template-columns:1fr var(--sidebar-width);gap:1.5rem;align-items:start}
+      .main-col{min-width:0}
+      .sidebar-col{width:var(--sidebar-width)}
+      .sidebar-col .js-section{position:sticky;top:1.25rem}
+
+      /* Assignment 6 (JS) styles */
+      .js-section{background:#fff;border:1px solid #e9ecef;border-radius:.6rem;padding:1rem;margin-top:1.5rem}
+      .js-row{display:flex;flex-wrap:wrap;gap:1rem}
+      .js-box{flex:1 1 220px;padding:0.75rem;border:1px dashed #e6e6e6;border-radius:.5rem;background:#fbfbfb}
+      .hover-box{width:160px;height:110px;background:#f1f3f5;border-radius:6px;display:flex;align-items:center;justify-content:center}
+      .todo-list li{display:flex;justify-content:space-between;align-items:center;padding:.35rem 0;border-bottom:1px dashed #eee}
+      .todo-list li.completed{text-decoration:line-through;color:#6c757d}
+      .small-btn{padding:.28rem .6rem;font-size:.85rem}
+
+      /* Responsive adjustments */
+      @media (max-width: 992px){
+        .site-grid{grid-template-columns:1fr}
+        .sidebar-col{order:2}
+        .sidebar-col .js-section{position:static;top:auto}
+      }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
       <div class="container">
         <a class="navbar-brand" href="#">MyLogo</a>
-        <div class="collapse navbar-collapse">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navCollapse">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#assignment">Assignment</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -33,12 +63,8 @@
     </nav>
 
     <main class="container">
-      <section id="assignment" class="mb-4">
-        <header class="mb-3">
-          <h1 class="h3">Assignment #5 — Forms and Validation</h1>
-          
-        </header>
-
+      <div class="site-grid">
+        <div class="main-col">
         <section class="example-card" aria-labelledby="part1">
           <h2 id="part1" class="h5"> Basic HTML Forms</h2>
           <p class="small text-muted"></p>
@@ -237,9 +263,92 @@
           <div class="col-6 col-md-4"><img src="img3.png" alt="Gallery 3" class="img-fluid rounded"></div>
         </div>
       </section>
+      
+        </div>
+        <aside class="sidebar-col">
+      <section id="assignment6" class="js-section" aria-labelledby="a6">
+        <h2 id="a6">JavaScript Basics</h2>
+        <p class="small text-muted">Student: <strong>Alisher Akhmett</strong> — Group: <strong>SE 2425</strong></p>
+
+        <div class="mb-3">
+          <strong>Introduction & Console</strong>
+          <div class="mt-2">
+            <button id="run-part1" class="btn btn-sm btn-outline-primary small-btn">console & alert</button>
+            <span class="text-muted ms-2">Open DevTools & console to see outputs.</span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <strong> DOM Manipulation</strong>
+          <div class="js-row mt-2">
+            <div class="js-box">
+              <h6>Change Content</h6>
+              <p id="p-change">This text will change when you click the button.</p>
+              <button id="btn-change-text" class="btn btn-sm btn-primary small-btn">Change Text</button>
+            </div>
+
+            <div class="js-box">
+              <h6>Change Styles</h6>
+              <div id="style-block" class="p-2" style="background:#fff;border:1px solid #eee">Resizable box text</div>
+              <div class="mt-2">
+                <button id="btn-bg" class="btn btn-sm btn-secondary small-btn">Change BG</button>
+                <button id="btn-font" class="btn btn-sm btn-secondary small-btn">Increase Font</button>
+              </div>
+            </div>
+
+            <div class="js-box">
+              <h6>Create / Remove Elements</h6>
+              <ul id="dynamic-list" class="mb-2">
+                <li>Item 1</li>
+                <li>Item 2</li>
+              </ul>
+              <button id="add-item" class="btn btn-sm btn-success small-btn">Add Item</button>
+              <button id="remove-item" class="btn btn-sm btn-danger small-btn">Remove Item</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <strong>Events</strong>
+          <div class="js-row mt-2">
+            <div class="js-box text-center">
+              <h6>Mouse Events</h6>
+              <div id="hover-box" class="hover-box">Hover me</div>
+            </div>
+            <div class="js-box">
+              <h6>Keyboard Events</h6>
+              <input id="key-input" class="form-control form-control-sm" placeholder="Type here"> 
+              <div id="key-display" class="mt-2 small text-muted">Current value: <span id="key-val"></span></div>
+            </div>
+            <div class="js-box">
+              <h6>Form Validation </h6>
+              <form id="mini-form">
+                <input id="fv-name" class="form-control form-control-sm mb-1" placeholder="Name">
+                <input id="fv-email" class="form-control form-control-sm mb-1" placeholder="Email">
+                <input id="fv-pass" type="password" class="form-control form-control-sm mb-1" placeholder="Password">
+                <div id="fv-error" class="text-danger small"></div>
+                <button class="btn btn-sm btn-primary mt-2 small-btn">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <strong> Mini To-Do App</strong>
+          <div class="mt-2">
+            <div class="d-flex gap-2">
+              <input id="todo-input" class="form-control form-control-sm" placeholder="New task">
+              <button id="add-task" class="btn btn-sm btn-primary small-btn">Add Task</button>
+            </div>
+            <ul id="todo-list" class="todo-list mt-2" style="list-style:none;padding-left:0"></ul>
+          </div>
+        </div>
+      </section>
+        </aside>
+      </div>
+    </main>
 
       <footer class="text-center text-muted my-4">© 2025 Alisher SE 2425</footer>
-    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -270,6 +379,111 @@
 
       document.getElementById('contact-validated').addEventListener('submit', function(e){ if(!this.checkValidity()){ e.preventDefault(); this.reportValidity(); } else { e.preventDefault(); alert('Contact form submitted (demo)') } })
       document.getElementById('contact-basic').addEventListener('submit', function(e){ e.preventDefault(); alert('Thank you — message recorded (demo).') })
+    </script>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function(){
+ const studentName = 'Alisher Akhmett'; 
+  const studentGroup = 'SE 2425'; 
+
+        const runPart1 = document.getElementById('run-part1');
+        if(runPart1){
+          runPart1.addEventListener('click', function(){
+            console.log('Student name:', studentName);
+            console.log('Group:', studentGroup);
+            console.log('Variables demo: string, number, boolean');
+            const s = 'hello'; const n = 5; const b = true;
+            console.log('string:', s, 'number:', n, 'boolean:', b);
+            console.log('Arithmetic: 5 + 3 =', 5+3);
+            console.log('Concat:', 'Name: ' + studentName + ' | Group: ' + studentGroup);
+            alert('Hello, JavaScript World!');
+          });
+        }
+
+        document.getElementById('btn-change-text')?.addEventListener('click', function(){
+          const p = document.getElementById('p-change');
+          if(p) p.textContent = 'The text was changed by JavaScript!';
+        });
+
+        const bgBtn = document.getElementById('btn-bg');
+        const fontBtn = document.getElementById('btn-font');
+        const styleBlock = document.getElementById('style-block');
+        let bgIndex = 0, fontSize = 14;
+        const colors = ['#ffffff','#fff3cd','#d1ecf1','#e2f0d9'];
+        bgBtn?.addEventListener('click', ()=>{
+          bgIndex = (bgIndex + 1) % colors.length;
+          if(styleBlock) styleBlock.style.background = colors[bgIndex];
+        });
+        fontBtn?.addEventListener('click', ()=>{
+          fontSize += 2; if(styleBlock) styleBlock.style.fontSize = fontSize + 'px';
+        });
+
+        const list = document.getElementById('dynamic-list');
+        let added = 0;
+        document.getElementById('add-item')?.addEventListener('click', ()=>{
+          added++;
+          const li = document.createElement('li');
+          li.textContent = 'New item ' + added;
+          list?.appendChild(li);
+        });
+        document.getElementById('remove-item')?.addEventListener('click', ()=>{
+          if(list && list.lastElementChild) list.removeChild(list.lastElementChild);
+        });
+
+        const hoverBox = document.getElementById('hover-box');
+        if(hoverBox){
+          hoverBox.addEventListener('mouseover', ()=>{ hoverBox.style.background = '#cfe9ff'; });
+          hoverBox.addEventListener('mouseout', ()=>{ hoverBox.style.background = '#f1f3f5'; });
+        }
+
+        const keyInput = document.getElementById('key-input');
+        const keyVal = document.getElementById('key-val');
+        keyInput?.addEventListener('keyup', (e)=>{ if(keyVal) keyVal.textContent = e.target.value; });
+
+        document.getElementById('mini-form')?.addEventListener('submit', function(e){
+          e.preventDefault();
+          const n = document.getElementById('fv-name').value.trim();
+          const em = document.getElementById('fv-email').value.trim();
+          const pw = document.getElementById('fv-pass').value.trim();
+          const err = document.getElementById('fv-error');
+          if(!n || !em || !pw){ err.textContent = 'Please fill all fields.'; return; }
+          err.textContent = '';
+          alert('Mini form submitted (demo)');
+        });
+
+        const todoInput = document.getElementById('todo-input');
+        const addTaskBtn = document.getElementById('add-task');
+        const todoList = document.getElementById('todo-list');
+        const tasks = [];
+
+        function renderTasks(){
+          todoList.innerHTML = '';
+          tasks.forEach((t,i)=>{
+            const li = document.createElement('li');
+            li.className = t.done ? 'completed' : '';
+            li.style.display = 'flex'; li.style.justifyContent = 'space-between'; li.style.alignItems = 'center';
+            const span = document.createElement('span'); span.textContent = t.text;
+            const controls = document.createElement('div');
+            const del = document.createElement('button'); del.className='btn btn-sm btn-outline-danger small-btn'; del.textContent='Delete'; del.dataset.index = i;
+            const done = document.createElement('button'); done.className='btn btn-sm btn-outline-success small-btn ms-1'; done.textContent = t.done? 'Undo':'Done'; done.dataset.index = i;
+            controls.appendChild(del); controls.appendChild(done);
+            li.appendChild(span); li.appendChild(controls);
+            todoList.appendChild(li);
+          });
+        }
+
+        addTaskBtn?.addEventListener('click', function(){
+          const v = todoInput.value.trim(); if(!v) return; tasks.push({text:v,done:false}); todoInput.value=''; renderTasks();
+        });
+
+        todoList?.addEventListener('click', function(e){
+          const btn = e.target.closest('button'); if(!btn) return;
+          const idx = Number(btn.dataset.index);
+          if(btn.textContent === 'Delete'){ tasks.splice(idx,1); renderTasks(); }
+          else { tasks[idx].done = !tasks[idx].done; renderTasks(); }
+        });
+
+      });
     </script>
   </body>
 </html>
